@@ -1,6 +1,6 @@
 %define name	asterisknow
 %define version	0
-%define svnrel	r728
+%define svnrel	r902
 %define release	%mkrel 0.%{svnrel}
 
 Summary:	AsteriskNOW. GUI for configuring Asterisk®
@@ -67,11 +67,12 @@ rm -rf "$RPM_BUILD_ROOT"
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/stylesheets/*.css
 %attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/contactinfo.conf
 %attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/gui_custommenus.conf
-%attr(0644,asterisk,asterisk)	%dir			%{_sysconfdir}/asterisk/scripts
-%attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/scripts/gui_sysinfo
-%attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/scripts/listfiles
-%attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/scripts/output_path
-%attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/scripts/graphs.sh
+
+%attr(0644,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/scripts
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/graphs.sh
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/gui_sysinfo
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/listfiles
+#attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/output_path
 %attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/providers.conf
 %attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/zapscan.conf
 %{_sbindir}/zapscan
