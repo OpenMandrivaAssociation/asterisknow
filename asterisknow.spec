@@ -1,6 +1,6 @@
 %define name	asterisknow
 %define version	0
-%define svnrel	r961
+%define svnrel	r988
 %define release	%mkrel 0.%{svnrel}
 
 Summary:	AsteriskNOW. GUI for configuring Asterisk®
@@ -35,19 +35,18 @@ the Asterisk GUI, and all other software needed for an Asterisk® system.
 [ "$RPM_BUILD_ROOT" != "/" ] && rm -rf "$RPM_BUILD_ROOT"
 mkdir -p %{buildroot}/sbin
 %makeinstall
-touch %{buildroot}%{_sysconfdir}/asterisk/contactinfo.conf
-touch %{buildroot}%{_sysconfdir}/asterisk/providers.conf
-touch %{buildroot}%{_sysconfdir}/asterisk/zapscan.conf
 
 %clean
 rm -rf "$RPM_BUILD_ROOT"
 
 %files
-/sbin/zapscan
-/sbin/zapscan.bin
 %defattr(-,root,root)
 %doc README
-%attr(0755,root,root)		%dir	%{_localstatedir}/asterisk/static-http/config
+%attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/scripts
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/graphs.sh
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/gui_sysinfo
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/listfiles
+%attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/static-http/config
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/*.html
 %attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/static-http/config/bkps
 %attr(0755,root,root)		%dir	%{_localstatedir}/asterisk/static-http/config/graphs
@@ -65,15 +64,9 @@ rm -rf "$RPM_BUILD_ROOT"
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/setup/setup.css
 %attr(0755,root,root)		%dir	%{_localstatedir}/asterisk/static-http/config/stylesheets
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/stylesheets/*.css
-%attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/contactinfo.conf
 %attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/gui_custommenus.conf
 
-%attr(0644,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/scripts
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/graphs.sh
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/gui_sysinfo
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/listfiles
-#attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/output_path
-%attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/providers.conf
-%attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/zapscan.conf
+/sbin/zapscan
+/sbin/zapscan.bin
 %{_sbindir}/zapscan
 %{_sbindir}/zapscan.bin
