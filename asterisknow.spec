@@ -1,6 +1,6 @@
 %define name	asterisknow
 %define version	0
-%define svnrel	r988
+%define svnrel	r1165
 %define release	%mkrel 0.%{svnrel}
 
 Summary:	AsteriskNOW. GUI for configuring Asterisk®
