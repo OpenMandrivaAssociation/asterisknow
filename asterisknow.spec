@@ -46,6 +46,7 @@ rm -rf "$RPM_BUILD_ROOT"
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/graphs.sh
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/gui_sysinfo
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/listfiles
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/mastercsvexists
 %attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/static-http/config
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/*.html
 %attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/static-http/config/bkps
