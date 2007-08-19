@@ -69,5 +69,7 @@ rm -rf "$RPM_BUILD_ROOT"
 
 /sbin/zapscan
 /sbin/zapscan.bin
+/sbin/ztscan
 %{_sbindir}/zapscan
 %{_sbindir}/zapscan.bin
+%{_sbindir}/ztscan
