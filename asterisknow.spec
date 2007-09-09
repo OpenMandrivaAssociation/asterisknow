@@ -1,6 +1,6 @@
 %define name	asterisknow
 %define version	0
-%define svnrel	r1467
+%define svnrel	r1558
 %define release	%mkrel 0.%{svnrel}
 
 Summary:	AsteriskNOW. GUI for configuring Asterisk®
@@ -13,7 +13,7 @@ Group:		System/Servers
 Source:		%{name}.%{svnrel}.tar.bz2
 Patch0:		%{name}.mdv.patch
 URL:		http://www.asterisknow.org/
-BuildRequires:	zaptel-devel
+BuildRequires:	tonezone-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Requires:	asterisk >= 1.4.0-3
 
@@ -33,7 +33,6 @@ the Asterisk GUI, and all other software needed for an Asterisk® system.
 
 %install
 [ "$RPM_BUILD_ROOT" != "/" ] && rm -rf "$RPM_BUILD_ROOT"
-mkdir -p %{buildroot}/sbin
 %makeinstall
 
 %clean
@@ -67,9 +66,6 @@ rm -rf "$RPM_BUILD_ROOT"
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/stylesheets/*.css
 %attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/gui_custommenus.conf
 
-/sbin/zapscan
-/sbin/zapscan.bin
-/sbin/ztscan
 %{_sbindir}/zapscan
 %{_sbindir}/zapscan.bin
 %{_sbindir}/ztscan
