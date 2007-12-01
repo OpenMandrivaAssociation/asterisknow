@@ -1,6 +1,6 @@
 %define name	asterisknow
 %define version	0
-%define svnrel	r1635
+%define svnrel	r1878
 %define release	%mkrel 0.%{svnrel}
 
 Summary:	AsteriskNOW. GUI for configuring Asterisk®
@@ -42,6 +42,8 @@ rm -rf "$RPM_BUILD_ROOT"
 %defattr(-,root,root)
 %doc README
 %attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/scripts
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/editmisdn.sh
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/editzap.sh
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/graphs.sh
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/gui_sysinfo
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/listfiles
@@ -64,8 +66,12 @@ rm -rf "$RPM_BUILD_ROOT"
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/setup/setup.css
 %attr(0755,root,root)		%dir	%{_localstatedir}/asterisk/static-http/config/stylesheets
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/stylesheets/*.css
+%attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/index.html
 %attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/gui_custommenus.conf
+%attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/providers.conf
 
 %{_sbindir}/zapscan
 %{_sbindir}/zapscan.bin
 %{_sbindir}/ztscan
+
+
