@@ -1,6 +1,6 @@
 %define name	asterisknow
 %define version	0
-%define svnrel	r1878
+%define svnrel	r1986
 %define release	%mkrel 0.%{svnrel}
 
 Summary:	AsteriskNOW. GUI for configuring Asterisk®
@@ -13,7 +13,7 @@ Group:		System/Servers
 Source:		%{name}.%{svnrel}.tar.bz2
 Patch0:		%{name}.mdv.patch
 URL:		http://www.asterisknow.org/
-BuildRequires:	tonezone-devel
+#BuildRequires:	tonezone-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Requires:	asterisk >= 1.4.0-3
 
@@ -52,8 +52,8 @@ rm -rf "$RPM_BUILD_ROOT"
 %attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/static-http/config
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/*.html
 %attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/static-http/config/bkps
-%attr(0755,root,root)		%dir	%{_localstatedir}/asterisk/static-http/config/graphs
-%attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/graphs/graph_cpu.svgz
+#attr(0755,root,root)		%dir	%{_localstatedir}/asterisk/static-http/config/graphs
+#attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/graphs/graph_cpu.svgz
 %attr(0755,root,root)		%dir	%{_localstatedir}/asterisk/static-http/config/images
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/images/*.gif
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/images/*.ico
@@ -71,8 +71,8 @@ rm -rf "$RPM_BUILD_ROOT"
 %attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/gui_custommenus.conf
 %attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/providers.conf
 
-%{_sbindir}/zapscan
-%{_sbindir}/zapscan.bin
-%{_sbindir}/ztscan
+#{_sbindir}/zapscan
+#{_sbindir}/zapscan.bin
+#{_sbindir}/ztscan
 
 
