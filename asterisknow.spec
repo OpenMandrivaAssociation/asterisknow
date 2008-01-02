@@ -14,6 +14,7 @@ Source:		%{name}.%{svnrel}.tar.bz2
 Patch0:		%{name}.mdv.patch
 URL:		http://www.asterisknow.org/
 #BuildRequires:	tonezone-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Requires:	asterisk >= 1.4.0-3
 
 %description
