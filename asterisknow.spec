@@ -3,7 +3,7 @@
 %define svnrel	r2332
 %define release	%mkrel 0.%{svnrel}.1
 
-Summary:	AsteriskNOW. GUI for configuring Asterisk®
+Summary:	AsteriskNOW. GUI for configuring Asterisk
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
@@ -18,10 +18,10 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Requires:	asterisk >= 1.4.0-3
 
 %description
-Asterisk® in minutes. The most popular open source PBX software,
-Asterisk®, can now be easily configured with a graphical interface.
-AsteriskNOW. Mandriva Linux distribution that includes Asterisk®,
-the Asterisk GUI, and all other software needed for an Asterisk® system.
+Asterisk in minutes. The most popular open source PBX software,
+Asterisk, can now be easily configured with a graphical interface.
+AsteriskNOW. Mandriva Linux distribution that includes Asterisk,
+the Asterisk GUI, and all other software needed for an Asterisk system.
 
 %prep
 %setup -q -n %{name}
