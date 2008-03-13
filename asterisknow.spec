@@ -1,7 +1,7 @@
 %define name	asterisknow
 %define version	0
-%define svnrel	r2486
-%define release	%mkrel 0.%{svnrel}.2
+%define svnrel	r2542
+%define release	%mkrel 0.%{svnrel}.1
 
 Summary:	GUI for configuring Asterisk
 Name:		%{name}
@@ -13,7 +13,6 @@ Group:		System/Servers
 Source:		%{name}.%{svnrel}.tar.bz2
 Patch0:		%{name}.mdv.patch
 URL:		http://www.asterisknow.org/
-#BuildRequires:	tonezone-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Requires:	asterisk >= 1.4.0-3
 
@@ -53,8 +52,6 @@ rm -rf "$RPM_BUILD_ROOT"
 %attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/static-http/config
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/*.html
 %attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/static-http/config/bkps
-#attr(0755,root,root)		%dir	%{_localstatedir}/asterisk/static-http/config/graphs
-#attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/graphs/graph_cpu.svgz
 %attr(0755,root,root)		%dir	%{_localstatedir}/asterisk/static-http/config/images
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/images/*.gif
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/images/*.ico
@@ -62,18 +59,8 @@ rm -rf "$RPM_BUILD_ROOT"
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/images/*.png
 %attr(0755,root,root)		%dir	%{_localstatedir}/asterisk/static-http/config/scripts
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/scripts/*.js
-%attr(0755,root,root)		%dir	%{_localstatedir}/asterisk/static-http/config/setup
-%attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/setup/*.html
-%attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/setup/digiumlogo.gif
-%attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/setup/setup.css
 %attr(0755,root,root)		%dir	%{_localstatedir}/asterisk/static-http/config/stylesheets
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/stylesheets/*.css
 %attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/index.html
 %attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/gui_custommenus.conf
 %attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/providers.conf
-
-#{_sbindir}/zapscan
-#{_sbindir}/zapscan.bin
-#{_sbindir}/ztscan
-
-
