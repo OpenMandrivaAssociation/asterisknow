@@ -40,27 +40,27 @@ rm -rf "$RPM_BUILD_ROOT"
 %files
 %defattr(-,root,root)
 %doc README
-%attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/scripts
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/editmisdn.sh
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/editzap.sh
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/graphs.sh
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/gui_sysinfo
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/listfiles
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/mastercsvexists
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/asterisk/scripts/networking.sh
-%attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/static-http
-%attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/static-http/config
-%attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/*.html
-%attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/asterisk/static-http/config/bkps
-%attr(0755,root,root)		%dir	%{_localstatedir}/asterisk/static-http/config/images
-%attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/images/*.gif
-%attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/images/*.ico
-%attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/images/*.jpg
-%attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/images/*.png
-%attr(0755,root,root)		%dir	%{_localstatedir}/asterisk/static-http/config/scripts
-%attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/scripts/*.js
-%attr(0755,root,root)		%dir	%{_localstatedir}/asterisk/static-http/config/stylesheets
-%attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/config/stylesheets/*.css
-%attr(0644,root,root)			%{_localstatedir}/asterisk/static-http/index.html
+%attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/lib/asterisk/scripts
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/editmisdn.sh
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/editzap.sh
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/graphs.sh
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/gui_sysinfo
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/listfiles
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/mastercsvexists
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/networking.sh
+%attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/lib/asterisk/static-http
+%attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/lib/asterisk/static-http/config
+%attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/*.html
+%attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/lib/asterisk/static-http/config/bkps
+%attr(0755,root,root)		%dir	%{_localstatedir}/lib/asterisk/static-http/config/images
+%attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/images/*.gif
+%attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/images/*.ico
+%attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/images/*.jpg
+%attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/images/*.png
+%attr(0755,root,root)		%dir	%{_localstatedir}/lib/asterisk/static-http/config/scripts
+%attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/scripts/*.js
+%attr(0755,root,root)		%dir	%{_localstatedir}/lib/asterisk/static-http/config/stylesheets
+%attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/stylesheets/*.css
+%attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/index.html
 %attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/gui_custommenus.conf
 %attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/providers.conf
