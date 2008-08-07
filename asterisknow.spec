@@ -1,6 +1,6 @@
 %define name	asterisknow
 %define version	0
-%define svnrel	r3525
+%define svnrel	r3636
 %define release	%mkrel 0.%{svnrel}.1
 
 Summary:	GUI for configuring Asterisk
@@ -9,7 +9,7 @@ Version:	%{version}
 Release:	%{release}
 License:	GPL
 Group:		System/Servers
-# svn co http://svn.digium.com/svn/asterisk-gui/trunk
+# svn co http://svn.digium.com/svn/asterisk-gui/branches/2.0
 Source:		%{name}.%{svnrel}.tar.bz2
 Patch0:		%{name}.mdv.patch
 URL:		http://www.asterisknow.org/
@@ -23,7 +23,7 @@ AsteriskNOW. Mandriva Linux distribution that includes Asterisk,
 the Asterisk GUI, and all other software needed for an Asterisk system.
 
 %prep
-%setup -q -n trunk
+%setup -q -n 2.0
 %patch0 -p0
 
 %build
@@ -40,27 +40,24 @@ rm -rf "$RPM_BUILD_ROOT"
 %files
 %defattr(-,root,root)
 %doc README
-%attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/lib/asterisk/scripts
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/editmisdn.sh
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/editzap.sh
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/graphs.sh
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/gui_sysinfo
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/listfiles
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/mastercsvexists
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/networking.sh
+%attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/lib/asterisk/gui/scripts
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/gui/scripts/dldsoundpack
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/gui/scripts/editmisdn.sh
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/gui/scripts/editzap.sh
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/gui/scripts/gui_sysinfo
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/gui/scripts/listfiles
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/gui/scripts/mastercsvexists
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/gui/scripts/restorebackup
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/gui/scripts/takebackup
 %attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/lib/asterisk/static-http
 %attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/lib/asterisk/static-http/config
 %attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/*.html
-%attr(0755,asterisk,asterisk)	%dir	%{_localstatedir}/lib/asterisk/static-http/config/bkps
 %attr(0755,root,root)		%dir	%{_localstatedir}/lib/asterisk/static-http/config/images
 %attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/images/*.gif
 %attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/images/*.ico
 %attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/images/*.jpg
 %attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/images/*.png
-%attr(0755,root,root)		%dir	%{_localstatedir}/lib/asterisk/static-http/config/scripts
-%attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/scripts/*.js
+%attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/js/*.js
 %attr(0755,root,root)		%dir	%{_localstatedir}/lib/asterisk/static-http/config/stylesheets
 %attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/stylesheets/*.css
 %attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/index.html
-%attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/gui_custommenus.conf
-%attr(0644,asterisk,asterisk)	%config(noreplace)	%{_sysconfdir}/asterisk/providers.conf
