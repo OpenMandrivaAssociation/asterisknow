@@ -1,6 +1,6 @@
 %define name	asterisknow
 %define version	0
-%define svnrel	r3636
+%define svnrel	r3646
 %define release	%mkrel 0.%{svnrel}.1
 
 Summary:	GUI for configuring Asterisk
@@ -57,6 +57,7 @@ rm -rf "$RPM_BUILD_ROOT"
 %attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/images/*.ico
 %attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/images/*.jpg
 %attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/images/*.png
+%attr(0755,root,root)		%dir	%{_localstatedir}/lib/asterisk/static-http/config/js
 %attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/js/*.js
 %attr(0755,root,root)		%dir	%{_localstatedir}/lib/asterisk/static-http/config/stylesheets
 %attr(0644,root,root)			%{_localstatedir}/lib/asterisk/static-http/config/stylesheets/*.css
