@@ -1,7 +1,7 @@
 %define name	asterisknow
 %define version	0
-%define svnrel	r3667
-%define release	%mkrel 0.%{svnrel}.2
+%define svnrel	r3677
+%define release	%mkrel 0.%{svnrel}.1
 
 Summary:	GUI for configuring Asterisk
 Name:		%{name}
@@ -11,7 +11,7 @@ License:	GPL
 Group:		System/Servers
 # svn co http://svn.digium.com/svn/asterisk-gui/branches/2.0
 Source:		%{name}.%{svnrel}.tar.bz2
-Patch0:		%{name}.mdv.patch
+#Patch0:	%{name}.mdv.patch
 URL:		http://www.asterisknow.org/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Requires:	asterisk >= 1.4.0-3
@@ -24,7 +24,7 @@ the Asterisk GUI, and all other software needed for an Asterisk system.
 
 %prep
 %setup -q -n 2.0
-%patch0 -p0
+#patch0 -p0
 
 %build
 %configure
