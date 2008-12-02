@@ -1,6 +1,6 @@
 %define name	asterisknow
 %define version	0
-%define svnrel	r4237
+%define svnrel	r4257
 %define release	%mkrel 0.%{svnrel}.1
 
 Summary:	GUI for configuring Asterisk
@@ -44,7 +44,6 @@ rm -rf "$RPM_BUILD_ROOT"
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/dldsoundpack
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/editmisdn.sh
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/editzap.sh
-%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/gui_sysinfo
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/listfiles
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/mastercsvexists
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/registerg729.sh
