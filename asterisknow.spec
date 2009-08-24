@@ -1,6 +1,6 @@
 %define name	asterisknow
 %define version	0
-%define svnrel	r4708
+%define svnrel	r4980
 %define release	%mkrel 0.%{svnrel}.1
 
 Summary:	GUI for configuring Asterisk
@@ -14,7 +14,7 @@ Source:		%{name}.%{svnrel}.tar.bz2
 Patch:		%{name}.mdv.patch
 URL:		http://www.asterisknow.org/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
-Requires:	asterisk >= 1.4.0-3
+Requires:	asterisk >= 1.6.1.0
 
 %description
 Asterisk in minutes. The most popular open source PBX software,
