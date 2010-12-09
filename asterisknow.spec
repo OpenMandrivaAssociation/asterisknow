@@ -1,7 +1,7 @@
 %define name	asterisknow
 %define version	0
 %define svnrel	r4980
-%define release	%mkrel 0.%{svnrel}.2
+%define release	%mkrel 0.%{svnrel}.3
 
 Summary:	GUI for configuring Asterisk
 Name:		%{name}
