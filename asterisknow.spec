@@ -1,7 +1,7 @@
 %define name	asterisknow
 %define version	0
-%define svnrel	r4980
-%define release	%mkrel 0.%{svnrel}.3
+%define svnrel	r5210
+%define release	%mkrel 0.%{svnrel}.1
 
 Summary:	GUI for configuring Asterisk
 Name:		%{name}
@@ -10,7 +10,7 @@ Release:	%{release}
 License:	GPL
 Group:		System/Servers
 # svn co http://svn.digium.com/svn/asterisk-gui/branches/2.0
-Source:		%{name}.%{svnrel}.tar.bz2
+Source:		%{name}.%{svnrel}.tar.xz
 Patch:		%{name}.mdv.patch
 URL:		http://www.asterisknow.org/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
@@ -49,6 +49,7 @@ rm -rf "$RPM_BUILD_ROOT"
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/editzap.sh
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/listfiles
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/mastercsvexists
+%attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/rebootsystem.sh
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/registerg729.sh
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/restorebackup
 %attr(0644,asterisk,asterisk)		%{_localstatedir}/lib/asterisk/scripts/takebackup
