@@ -1,0 +1,17 @@
+--- scripts/mastercsvexists.orig	2009-03-10 22:35:23.000000000 +0100
++++ scripts/mastercsvexists	2009-03-10 22:35:34.000000000 +0100
+@@ -3,10 +3,10 @@
+ MASTERCSV="/var/log/asterisk/cdr-csv/Master.csv"
+ STATICHTTP="/var/lib/asterisk/static-http/"
+ 
+-if [ `whoami` != "root" ]; then
+-	echo "Error: You must be root to run this script."
+-	exit 1
+-fi
++#if [ `whoami` != "root" ]; then
++#	echo "Error: You must be root to run this script."
++#	exit 1
++#fi
+ 
+ if [ -f /var/log/asterisk/cdr-csv/Master.csv ]; then
+ 	if [ ! -f $STATICHTTP`basename $MASTERCSV` ]; then
