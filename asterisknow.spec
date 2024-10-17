@@ -12,7 +12,7 @@ Group:		System/Servers
 # svn co http://svn.digium.com/svn/asterisk-gui/branches/2.0
 Source:		%{name}.%{svnrel}.tar.xz
 Patch:		%{name}.mdv.patch
-URL:		http://www.asterisknow.org/
+URL:		https://www.asterisknow.org/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Requires:	asterisk >= 1.6.1.0
 
